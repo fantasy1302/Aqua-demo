@@ -504,7 +504,7 @@ body {
 
 .pre-recorded-proposition-list-item:before {
   content: "";
-  background-image: url(/assets/images/pre-recorded_check.svg);
+  background-image: url(../images/pre-recorded_check.svg);
   background-repeat: no-repeat;
   height: 24px;
   width: 15px;
