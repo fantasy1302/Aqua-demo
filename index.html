@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Demo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <section class="header-pre-recorded">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="header-pre-recorded-container">
+                        <div class="header-pre-recorded-header-container">
+                            <h1 class="header-pre-recorded-header">
+                                See aqua’s
+                                pre-recorded demo
+                            </h1>
+                        </div>
+                        <div class="header-pre-recorded-features">
+                            <p class="header-pre-recorded-list-description">In just 15 minutes, we cover:</p>
+                            <ul class="header-pre-recorded-list">
+                                <li class="header-pre-recorded-list-item">
+                                    <p>
+                                        Use signals from product usage to inform upsell
+                                    </p>
+                                </li>
+
+                                <li class="header-pre-recorded-list-item">
+                                    <p>Identify and engage Product Qualified Leads (PQLs)
+                                    </p>
+                                </li>
+
+                                <li class="header-pre-recorded-list-item">
+                                    <p>
+                                       Send sellers alerts on when and how to engage
+                                    </p>
+                                </li>
+                                <li class="header-pre-recorded-list-item">
+                                    <p>
+                                        Increase lead conversion rates by 5x
+                                    </p>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="pre-recorded-video-container">
+        <div class="pre-recorded-video-wrapper">
+            <div class="pre-recorded-video-content">
+                <div id="player"></div>
+                <script>
+                    var videoId = "vNb19HI_lvo";
+                    var tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/player_api";
+                    var firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                    var player;
+                    var videoStarted = false;
+                    localStorage.setItem('mute', true);
+
+                    function initPlayVideo() {
+                        $(".pre-recorded-video-youtube-image").on("click", function () {
+                            $(".pre-recorded-video-youtube-image").hide();
+                            $('.pre-recorded-video-content iframe').show();
+                            videoStarted = true;
+                            if (player) {
+                                player.seekTo(0);
+                                player.playVideo();
+                                localStorage.setItem('mute', false);
+                                player.unMute();
+                            } else {
+                                console.log("Player not ready yet.");
+                            }
+                        });
+
+                        if (!videoStarted) {
+                            onPlayerReady();
+                        }
+                    }
+
+                    function onPlayerReady(event) {
+                        if (event && event.target) {
+                            event.target.playVideo();
+                            if (localStorage.getItem('mute') === 'true') {
+                                event.target.mute();
+                            }
+                        }
+                    }
+
+                    function onYouTubePlayerAPIReady() {
+                        player = new YT.Player('player', {
+                            videoId: videoId,
+                            playerVars: {
+                                'rel': 0,
+                                'autoplay': 0,
+                                'showinfo': 0,
+                                'fs': 0,
+                                'iv_load_policy': 3,
+                                'disablekb': 1,
+                                'modestbranding': 1,
+                                'mute': true
+                            },
+                            events: {
+                                'onReady': onPlayerReady,
+                                'onStateChange': onPlayerStateChange
+                            }
+                        });
+
+                        initPlayVideo();
+
+                    }
+
+                    function onPlayerStateChange(event) {
+                        if (event.data == YT.PlayerState.ENDED) {
+                            player.stopVideo();
+                            var related = document.querySelector('.ytp-endscreen-content');
+                            if (related) {
+                                related.style.display = 'none';
+                            }
+                        }
+                    }
+                </script>
+
+                <div class="pre-recorded-youtube-image-video-cover">
+                    <img src="assets/images/pre-recorded_cover.png" alt="video cover" class="pre-recorded-video-youtube-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pre-recorded  section-margins-standart">
+        <div class="container-xl">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="pre-recorded-proposition">
+                        <div class="pre-recorded-title-wrap">
+
+                            <h2 class="pre-recorded-title">Move your team to aqua today and save up
+                                to 60% of your time spent on QA management</h2>
+
+                        </div>
+                        <div class="pre-recorded-proposition-button-wrapper">
+                            <a class="btn pre-recorded-proposition-button" href="/">
+                                Start for free
+                            </a>
+                        </div>
+                        <div class="pre-recorded-proposition-list">
+                            <ul>
+                                <li class="pre-recorded-proposition-list-item">
+                                    <p class="header-pre-recorded-list-description">No credit card required</p>
+                                </li>
+
+                                <li class="pre-recorded-proposition-list-item">
+                                    <p>Cancel anytime</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+</body>
+
+</html>

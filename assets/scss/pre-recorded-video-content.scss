@@ -1,0 +1,116 @@
+@import "settings/color.scss";
+@import "settings/mixin.scss";
+@import "settings/fonts-and-botton.scss";
+
+.pre-recorded-video-cover {
+  cursor: pointer
+}
+
+.pre-recorded-video-content {
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  @include break(1440) {
+    height: 537px;
+  }
+  @include break(1199) {
+    height: 505px;
+    border-radius: 16px;
+  }
+  @include break(991) {
+    border-radius: 12px;
+  
+    height: 383px;
+  }
+  @include break(767) {
+
+    height: 290px;
+    border-radius: 9px;
+  }
+  @include break(575) {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  @include break(430) {
+    border-radius: 5.5px;
+  }
+}
+
+.pre-recorded-video-container iframe {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: none;
+  border-radius: 20px;
+  @include break(1199) {
+    border-radius: 16px;
+  }
+  @include break(991) {
+    border-radius: 12px;
+  }
+  @include break(767) {
+    border-radius: 9px;
+  }
+  @include break(575) {
+    border-radius: 5px;
+  }
+  @include break(430) {
+    border-radius: 5.5px;
+  }
+}
+
+.pre-recorded-video-youtube-image {
+  border-radius: 20px;
+  max-width: 100%;
+  @include break(1199) {
+    border-radius: 16px;
+  }
+  @include break(991) {
+    border-radius: 12px;
+  }
+  @include break(767) {
+    border-radius: 9px;
+  }
+  @include break(575) {
+    border-radius: 5px
+  }
+  @include break(319) {
+    border-radius: 5.5px
+  }
+}
+
+.pre-recorded-youtube-image-video-cover {
+  position: relative;
+  cursor: pointer
+}
+
+.pre-recorded-video-wrapper {
+  max-width: 970px;
+  margin: 0 auto;
+  @include break(1199) {
+    max-width: 936px;
+  }
+  @include break(991) {
+    max-width: 100%;
+    padding: 0 36px;
+    margin: auto 0;
+  }
+  @include break(767) {
+    padding: 0 30px;
+  }
+  @include break(575) {
+    padding: 0;
+    max-width: 100%;
+    margin: 0 12px;
+  }
+  @include break(319) {
+    max-width: 100%;
+    padding: 0 12px;
+    margin: 0
+  }
+}
+
+
+
+
+

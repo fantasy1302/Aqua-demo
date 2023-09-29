@@ -1,0 +1,151 @@
+@import "settings/color.scss";
+@import "settings/mixin.scss";
+@import "settings/fonts-and-botton.scss";
+
+.pre-recorded-proposition {
+  display:flex;
+  flex-direction:column;
+  background:#f3f9fc;
+  border-radius:29px;
+  padding:60px 226px 67px;
+  align-items:center;
+  @include break(1399) {
+    max-height:390px;
+    padding: 60px 136px 67px;
+  }
+  @include break(1199) {
+    padding:38px 117px;
+    max-width:936px;
+    margin:0 auto;
+  }
+  @include break(991) {
+    margin-left:24px;
+    margin-right:24px;
+    padding:50px 79px 57px;
+  }
+  @include break(767) {
+    padding:40px;
+    margin-left:18px;
+    margin-right:18px;
+    max-height:fit-content;
+  }
+  @include break(575) {
+    padding:40px 17px 41px;
+    margin-left:0;
+    margin-right:0;
+    border-radius:18px;
+  }
+ }
+
+ .pre-recorded-title {
+  text-align:center;
+  @extend %font-2-1;
+  @include break(575) {
+    padding-left:0;
+    padding-right:0;
+  }
+ }
+
+ .pre-recorded-proposition-button {
+  color:#fff;
+  text-transform:uppercase;
+  background-color:#ff7a68;
+  border-radius:24px;
+  padding:12px 72px;
+  text-align:center;
+  display: block;
+  @extend %font-15-1;
+  cursor:pointer;
+  @include break(991) {
+    padding:12px 61px;
+  }
+  @include break(767) {
+    display:flex;
+    justify-content:center;
+  }
+  @include break(575) {
+    padding:8px 0;
+  }
+ }
+
+ .pre-recorded-title-wrap {
+  margin-bottom:50px;
+  @include break(1199) {
+    margin-bottom: 30px;
+  }
+  @include break(991) {
+    margin-bottom:26px;
+    max-width:538px;
+  }
+  @include break(767) {
+    max-width:418px;
+    margin-bottom:30px;
+  }
+  @include break(575) {
+    margin-bottom:30px;
+    max-width:100%;
+  }
+ }
+ .pre-recorded-proposition-list {
+  display:flex;
+  justify-content:center;
+  margin-top:27px;
+  @include break(767) {
+    margin-top:23px;
+  }
+ }
+
+ .pre-recorded-proposition-list ul {
+  list-style:none;
+  display:flex;
+  margin-bottom:0;
+  gap:40px;
+  flex-direction:row;
+  @include break(991) {
+    gap:31px;
+  }
+  @include break(767) {
+    gap:30px;
+    padding:0;
+  }
+  @include break(575) {
+    flex-direction:column;
+    padding:0;
+    align-items:center;
+    gap:8px;
+  }
+ }
+
+ .pre-recorded-proposition-button-wrapper {
+  @include break(767) {
+  width:100%;
+  }
+ }
+
+ .pre-recorded-proposition-list p {
+  color:#5b7088;
+  padding-left:30px;
+  @extend %font-10-1;
+ }
+
+ .pre-recorded-proposition-list-item:before {
+  content:"";
+  background-image:url(/assets/images/pre-recorded_check.svg);
+  background-repeat:no-repeat;
+  height:24px;
+  width:15px;
+  background-position-y:center;
+  position:absolute;
+  background-size:100%;
+ }
+
+ .pre-recorded-proposition-button{
+   text-transform:uppercase;
+   text-decoration: none;
+  &:hover {
+  color:$white;
+  background-color: $ogreOdor;
+ }
+}
+
+
